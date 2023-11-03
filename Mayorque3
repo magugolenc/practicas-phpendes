@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor que 3</title>
+</head>
+<body>
+
+<fieldset>
+    <legend>Numero mayor que 3</legend>
+    <form action="Mayor3.php" method="post">
+        <label for="num1">Número 1:</label>
+        <input type="number" name="num1" required>
+        <br>
+        <label for="num2">Número 2:</label>
+        <input type="number" name="num2" required>
+        <br>
+        <label for="num3">Número 3:</label>
+        <input type="number" name="num3" required>
+        <br>
+        <p><input type="submit"> Ver resultado</p>
+    </form>
+</fieldset>
+</body>
+</html>
+
+<?php
+$num1 = $_POST['num1'];
+$num2 = $_POST['num2'];
+$num3 = $_POST['num3'];
+
+if($num1>$num2 && $num1>$num3) {
+    echo"El mayor es $num1";
+} else if ($num2>$num1 && $num2>$num3) {
+    echo"El mayor es $num2";
+} else if($num3>$num2 && $num3>$num1) {
+    echo"El mayor es $num3";
+} else if($num1==$num3 && $num1> $num2) {
+    echo"El mayor es $num1";
+} else if($num1==$num2 && $num1> $num3) {
+    echo"El mayor es $num1";
+} else if($num3==$num2 && $num3> $num1) {
+    echo"El mayor es $num3";
+} else {
+    echo"Todos los numeros son iguales.";
+}
+?>
