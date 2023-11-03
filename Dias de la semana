@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la semana</title>
+</head>
+<body>
+    <label for="dia">Introduzca un día de la semana: </label>
+    <input name="dia" type="number" placeholder="Introduce un nº del 1 al 7">
+</body>
+</html>
+
+<?php
+$dia = $_POST['dia'];
+
+switch($dia) {
+    case 1:
+        echo "1 = Lunes";
+    break;
+    case 2:
+        echo "2 = Martes";
+    break;
+    case 3:
+        echo "3 = Miércoles";
+    break;
+    case 4:
+        echo "4 = Jueves";
+    break;
+    case 5:
+        echo "5 = Viernes";
+    break;
+    case 6:
+        echo "6 = Sábado";
+    break;
+    case 7:
+        echo "7 = Domingo";
+    break;
+}
+?>
