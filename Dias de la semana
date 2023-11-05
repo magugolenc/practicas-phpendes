@@ -6,35 +6,45 @@
     <title>Día de la semana</title>
 </head>
 <body>
+<form action="diasemana.php" method="post">
     <label for="dia">Introduzca un día de la semana: </label>
     <input name="dia" type="number" placeholder="Introduce un nº del 1 al 7">
+    <input type="submit">
+</form>
 </body>
 </html>
 
 <?php
 $dia = $_POST['dia'];
 
-switch($dia) {
-    case 1:
-        echo "1 = Lunes";
-    break;
-    case 2:
-        echo "2 = Martes";
-    break;
-    case 3:
-        echo "3 = Miércoles";
-    break;
-    case 4:
-        echo "4 = Jueves";
-    break;
-    case 5:
-        echo "5 = Viernes";
-    break;
-    case 6:
-        echo "6 = Sábado";
-    break;
-    case 7:
-        echo "7 = Domingo";
-    break;
+if ($dia >= 1 && $dia <= 7) {
+        switch ($dia) {
+            case 1:
+                $diaSemana = "Lunes";
+                break;
+            case 2:
+                $diaSemana = "Martes";
+                break;
+            case 3:
+                $diaSemana = "Miércoles";
+                break;
+            case 4:
+                $diaSemana = "Jueves";
+                break;
+            case 5:
+                $diaSemana = "Viernes";
+                break;
+            case 6:
+                $diaSemana = "Sábado";
+                break;
+            case 7:
+                $diaSemana = "Domingo";
+                break;
+        }
+        echo "El día de la semana correspondiente al número $dia es: $diaSemana";
+    } 
+    else {
+        echo "Error, el número debe estar en el rango del 1 al 7.";
+    }
 }
 ?>
