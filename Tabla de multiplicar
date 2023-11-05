@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+<body>
+<form action="tabla_multiplicar.php" method="post">
+    <label for="mult">Ingrese un número del 1 al 10: </label>
+    <input name="mult" type="number" placeholder="Introduce un nº del 1 al 10">
+    <input type="submit">
+</form>
+</body>
+</html>
+<?php
+    $mult = intval($_POST["mult"]);
+
+    if ($mult >= 1 && $mult <= 10) {
+        echo "Tabla de multiplicar del $mult:\n";
+        for ($i = 1; $i <= 10; $i++) {
+            $resultado = $mult * $i;
+            echo "$mult x $i = $resultado.\n";
+        }
+    } 
+    else {
+        echo "Error, por favor ingrese un número entre 1 y 10.";
+    }
+}
+?>
