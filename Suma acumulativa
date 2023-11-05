@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joaquín García"
+    <title>Suma Acumulativa</title>
+</head>
+<body>
+    <h1>Calculadora de Suma Acumulativa</h1>
+    <form action="suma_acumulativa.php" method="post">
+        <label for="num1">Ingrese un número para hacer la suma acumulativa: </label>
+        <input type="number" name="num1">
+        <input type="submit" value="Calcular suma">
+    </form>
+</body>
+</html>
+
+<?php
+$num1 = intval($_POST["num1"]);
+
+$suma = 0;
+
+    for ($i = 1; $i <= $num1; $i++) {
+        $suma += $i;
+    }
+
+    echo "La suma acumulativa de 1 hasta $num1 es: $suma";
+?>
